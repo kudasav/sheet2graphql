@@ -49,7 +49,11 @@ class MyChunkedUploadCompleteView(ChunkedUploadCompleteView):
 
 
 def webhook_handler(request):
-    data = json.loads(request.body)
+    try:
+        data = json.loads(request.body)
+    except:
+        return HttpResponse("Ivalid Request", status=400)
+
     meta = data['meta']
     data = data['data']
     user = User.objects.get(user_id=meta['custom_data']['user_id'])
@@ -99,5 +103,4 @@ def webhook_handler(request):
 
             subscription.save()
    
-    # spreadsheet.import_sheets('agents.xlsx')
     return HttpResponse("")
