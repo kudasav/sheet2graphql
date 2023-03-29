@@ -70,7 +70,7 @@ def webhook_handler(request):
         name = name.lower().replace("sheet2graphql", "").strip()
         subscription = user.subscriptions
 
-        if meta["event_name"] in ["subscription_payment_success"]:
+        if meta["event_name"] in ["subscription_created", "subscription_payment_success"]:
             renews = parser.parse(data["attributes"]["renews_at"])
 
             if name == "starter":
