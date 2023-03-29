@@ -1,0 +1,27 @@
+:root>* {
+    --md-primary-fg-color: #0e7490;
+    --md-primary-fg-color--light: #06b6d4;
+    --md-primary-fg-color--dark: #155e75;
+}
+
+.md-typeset__table th{
+    background-color: #f5f5f5;
+    border-left: 1px solid rgba(0,0,0,.07);
+}
+
+.md-typeset__table td{
+    border-left: 1px solid rgba(0,0,0,.07);
+}
+
+.md-typeset__table tr td:first-child {
+    background-color: #f5f5f5;
+}
+
+thead tr th:first-child,
+tbody tr td:first-child {
+    min-width: 2em !important
+}
+
+h2 {
+    color: #0e7490;
+}

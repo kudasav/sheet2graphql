@@ -1,0 +1,32 @@
+{
+  "spreadsheetId": "1bcQtycw_IYLMhR2ueTP8HvMLSAj7pOVKYYF-tNorfDM",
+  "replies": [
+    {
+      "addFilterView": {
+        "filter": {
+          "filterViewId": 795540651,
+          "title": "test",
+          "range": {
+            "sheetId": 1902043019,
+            "startRowIndex": 0,
+            "endRowIndex": 1007,
+            "startColumnIndex": 0,
+            "endColumnIndex": 20
+          },
+          "sortSpecs": [{ "dimensionIndex": 3, "sortOrder": "DESCENDING" }],
+          "criteria": {
+            "0": { "hiddenValues": ["Aditya Birla World Academy"] }
+          },
+          "filterSpecs": [
+            {
+              "columnIndex": 0,
+              "filterCriteria": {
+                "hiddenValues": ["Aditya Birla World Academy"]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

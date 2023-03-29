@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "Name": "Edith Fernandini",
+    "Phone": "917-683-1349",
+    "Address": "JACKSON HEIGHTS, NY",
+    "Email": "edithfernandini_451@msn.com"
+  },
+  {
+    "id": "2",
+    "Name": "Keneshia Haye",
+    "Phone": "254-449-5299",
+    "Address": "Jacksonville, FL",
+    "Email": "keneshiarealestate@gmail.com"
+  },
+  {
+    "id": "3",
+    "Name": "Rose Failla",
+    "Phone": "516-785-0100",
+    "Address": "Wantagh, NY",
+    "Email": "rfailla@signaturepremier.com"
+  },
+  {
+    "id": "4",
+    "Name": "Vincent Davi",
+    "Phone": "631-842-8400",
+    "Address": "Amityville, NY",
+    "Email": "vdavi@signaturepremier.com"
+  },
+  {
+    "id": "5",
+    "Name": "Kai Geick",
+    "Phone": "631-881-5160",
+    "Address": "Hauppauge, NY",
+    "Email": "kgeick@realtyconnectusa.com"
+  },
+  {
+    "id": "6",
+    "Name": "Manuel Sanchez Rodriguez",
+    "Phone": "631-881-5160",
+    "Address": "Hauppauge, NY",
+    "Email": "masanchez@realtyconnectusa.com"
+  },
+  {
+    "id": "7",
+    "Name": "Yasmeen Azzam",
+    "Phone": "631-881-5160",
+    "Address": "Hauppauge, NY",
+    "Email": "yazzam@realtyconnectusa.com"
+  },
+  {
+    "id": "8",
+    "Name": "Keylin Sanchez",
+    "Phone": "631-881-5160",
+    "Address": "Hauppauge, NY",
+    "Email": "ksanchez@realtyconnectusa.com"
+  },
+  {
+    "id": "9",
+    "Name": "Albert Gershengoren",
+    "Phone": "516-785-0100",
+    "Address": "Wantagh, NY",
+    "Email": "agershengoren@signaturepremier.com"
+  },
+  {
+    "id": "10",
+    "Name": "Erin Rappa",
+    "Phone": "516-785-0100",
+    "Address": "Wantagh, NY",
+    "Email": "erappa@signaturepremier.com"
+  }
+]

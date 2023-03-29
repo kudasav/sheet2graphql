@@ -1,0 +1,80 @@
+version: '3.7'
+services:
+    sheets2graphql-landing:
+        build: ./landing-page
+        restart: unless-stopped
+        container_name: sheets2graphql_landing
+        command: bash -c "npm install && npm run build && npm run start"
+        volumes:
+            - ./landing-page:/app
+        environment: 
+            - VIRTUAL_HOST=sheet2graphql.co
+            - VIRTUAL_PORT=3031
+            - LETSENCRYPT_HOST=sheet2graphql.co
+            - LETSENCRYPT_EMAIL=savanhu.k@yahoo.com
+        ports:
+            - "3031:3031"
+        networks:
+            proxy:
+
+    sheets2graphql-docs:
+        build: ./documentation
+        restart: unless-stopped
+        container_name: sheets2graphql_docs
+        volumes:
+            - ./landing-page:/app
+        environment: 
+            - VIRTUAL_HOST=docs.sheet2graphql.co
+            - VIRTUAL_PORT=80
+            - LETSENCRYPT_HOST=docs.sheet2graphql.co
+            - LETSENCRYPT_EMAIL=savanhu.k@yahoo.com
+        ports:
+            - "3300:80"
+        networks:
+            proxy:
+
+    sheets2graphql-dashboard:
+        build: ./dashboard
+        restart: unless-stopped
+        container_name: sheets2graphql_dashboad
+        command: bash -c "npm install --force && npm run build && npm run start"
+        volumes:
+            - ./dashboard:/app
+        environment: 
+            - VIRTUAL_HOST=dashboard.sheet2graphql.co
+            - VIRTUAL_PORT=3032
+            - LETSENCRYPT_HOST=dashboard.sheet2graphql.co
+            - LETSENCRYPT_EMAIL=savanhu.k@yahoo.com
+        ports:
+            - "3032:3032"
+        networks:
+            proxy:
+    
+    sheets2graphql-backend:
+        build: ./backend
+        restart: unless-stopped
+        container_name: sheets2graphql_backend
+        command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn --log-level critical --error-logfile error.log --workers=3 backend.wsgi --bind 0.0.0.0:8082"
+        volumes:
+            - ./backend:/app
+        environment: 
+            - VIRTUAL_HOST=api.sheet2graphql.co
+            - VIRTUAL_PORT=8082
+            - LETSENCRYPT_HOST=api.sheet2graphql.co
+            - LETSENCRYPT_EMAIL=savanhu.k@yahoo.com
+        networks:
+            proxy:
+
+    sheets2graphql-emailer:
+        build: ./workers
+        restart: unless-stopped
+        container_name: emailer
+        command: bash -c "python emailer.py"
+        volumes:
+            - ./workers:/app
+        networks:
+            proxy:
+
+networks:
+    proxy:
+        name: proxy

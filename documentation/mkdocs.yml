@@ -1,0 +1,38 @@
+site_name: Sheet2GraphQL
+site_url: https://sheet2graphql.co/
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.tracking
+
+extra_css:
+  - stylesheets/custom.css
+
+nav:
+    - Introduction: index.md
+    - 'Getting Started': 'getting-started.md'
+    - 'Making Queries':
+          - 'Read Data': 'read.md'
+          - 'Add Data': 'add.md'
+          - 'Update Data': 'update.md'
+          - 'Delete Data': 'delete.md'
+    - 'Authentication': authentication.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - tables
+  - attr_list
+  - md_in_html
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+plugins:
+  - glightbox
