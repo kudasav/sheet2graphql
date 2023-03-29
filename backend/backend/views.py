@@ -106,7 +106,7 @@ def webhook_handler(request):
                 subscription.update_card_url = data["attributes"]["urls"]["update_payment_method"]
 
             if data["attributes"]["card_last_four"]:
-                subscription.update_card_url = data["attributes"]["card_last_four"]
+                subscription.card_number = data["attributes"]["card_last_four"]
 
             subscription.save()
    
