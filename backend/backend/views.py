@@ -56,14 +56,21 @@ def webhook_handler(request):
 
     meta = data['meta']
     data = data['data']
-    user = User.objects.get(user_id=meta['custom_data']['user_id'])
+
+    if 'custom_data' in meta and 'user_id' in meta['custom_data']:
+        try:
+            user = User.objects.get(user_id=meta['custom_data']['user_id'])
+        except:
+            return HttpResponse("No user with ID found: "+meta['custom_data']['user_id'], status=400)
+    else:
+        return HttpResponse("user ID not provided", status=400)
 
     if data["type"] == "subscriptions":
         name = data["attributes"]["product_name"]
         name = name.lower().replace("sheet2graphql", "").strip()
         subscription = user.subscriptions
 
-        if meta["event_name"] in ["subscription_created", "subscription_payment_success"]:
+        if meta["event_name"] in ["subscription_payment_success"]:
             renews = parser.parse(data["attributes"]["renews_at"])
 
             if name == "starter":
@@ -95,8 +102,8 @@ def webhook_handler(request):
             subscription.save()
 
         if meta["event_name"] == "subscription_updated":
-            if data["attributes"]["update_payment_method"]:
-                subscription.update_card_url = data["attributes"]["update_payment_method"]
+            if data["attributes"]["urls"]["update_payment_method"]:
+                subscription.update_card_url = data["attributes"]["urls"]["update_payment_method"]
 
             if data["attributes"]["card_last_four"]:
                 subscription.update_card_url = data["attributes"]["card_last_four"]
