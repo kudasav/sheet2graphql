@@ -76,3 +76,5 @@ class Subscriptions(models.Model):
     total_requests = models.IntegerField(default=0)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True)
+
+# ill just say it before you get mad about something again

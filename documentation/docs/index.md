@@ -2,7 +2,7 @@
 
 Welcome to Sheet2GraphQL's documentation.
 
-Sheet2GraphQL is a service that allows you to turn your spreadsheets into fully fleged GraphQL APIs. This docuementation will help you to get started on creating and using your GraphQL APIs with Sheet2GraphQL
+Sheet2GraphQL is a service that allows you to turn your spreadsheets into fully fleged GraphQL APIs. This documentation will help you to get started on creating and using your GraphQL APIs with Sheet2GraphQL
 
 ### HTTP status codes
 
